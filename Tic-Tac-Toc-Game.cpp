@@ -86,7 +86,7 @@ short readuserchoice(string m, string g, string h, stinfo& data)
     return boxnum;
 }
 
-char userorcum(char b1, char b2, char b3)
+char userorcum(char b1)
 {
     if (b1 == 'O')
         return 'O';
@@ -97,24 +97,24 @@ char userorcum(char b1, char b2, char b3)
 
 char winorlossalg(stinfo& data, short /*times*/)
 {
-    if (data.arrbox[0] == data.arrbox[1] && data.arrbox[1] == data.arrbox[2] && data.arrbox[0] != '1')
-        return userorcum(data.arrbox[0], data.arrbox[1], data.arrbox[2]);
-    if (data.arrbox[3] == data.arrbox[4] && data.arrbox[4] == data.arrbox[5] && data.arrbox[3] != '4')
-        return userorcum(data.arrbox[3], data.arrbox[4], data.arrbox[5]);
-    if (data.arrbox[6] == data.arrbox[7] && data.arrbox[7] == data.arrbox[8] && data.arrbox[6] != '7')
-        return userorcum(data.arrbox[6], data.arrbox[7], data.arrbox[8]);
+    if (data.arrbox[0] == data.arrbox[1] && data.arrbox[1] == data.arrbox[2])
+        return userorcum(data.arrbox[0]);
+    if (data.arrbox[3] == data.arrbox[4] && data.arrbox[4] == data.arrbox[5])
+        return userorcum(data.arrbox[3]);
+    if (data.arrbox[6] == data.arrbox[7] && data.arrbox[7] == data.arrbox[8])
+        return userorcum(data.arrbox[6]);
 
-    if (data.arrbox[0] == data.arrbox[3] && data.arrbox[3] == data.arrbox[6] && data.arrbox[0] != '1')
-        return userorcum(data.arrbox[0], data.arrbox[3], data.arrbox[6]);
-    if (data.arrbox[1] == data.arrbox[4] && data.arrbox[4] == data.arrbox[7] && data.arrbox[1] != '2')
-        return userorcum(data.arrbox[1], data.arrbox[4], data.arrbox[7]);
-    if (data.arrbox[2] == data.arrbox[5] && data.arrbox[5] == data.arrbox[8] && data.arrbox[2] != '3')
-        return userorcum(data.arrbox[2], data.arrbox[5], data.arrbox[8]);
+    if (data.arrbox[0] == data.arrbox[3] && data.arrbox[3] == data.arrbox[6])
+        return userorcum(data.arrbox[0]);
+    if (data.arrbox[1] == data.arrbox[4] && data.arrbox[4] == data.arrbox[7])
+        return userorcum(data.arrbox[1]);
+    if (data.arrbox[2] == data.arrbox[5] && data.arrbox[5] == data.arrbox[8])
+        return userorcum(data.arrbox[2]);
 
-    if (data.arrbox[0] == data.arrbox[4] && data.arrbox[4] == data.arrbox[8] && data.arrbox[0] != '1')
-        return userorcum(data.arrbox[0], data.arrbox[4], data.arrbox[8]);
-    if (data.arrbox[2] == data.arrbox[4] && data.arrbox[4] == data.arrbox[6] && data.arrbox[2] != '3')
-        return userorcum(data.arrbox[2], data.arrbox[4], data.arrbox[6]);
+    if (data.arrbox[0] == data.arrbox[4] && data.arrbox[4] == data.arrbox[8])
+        return userorcum(data.arrbox[0]);
+    if (data.arrbox[2] == data.arrbox[4] && data.arrbox[4] == data.arrbox[6] )
+        return userorcum(data.arrbox[2]);
 
     bool full = true;
     for (int i = 0; i < 9; i++)
