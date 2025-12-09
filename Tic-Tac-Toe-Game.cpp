@@ -35,13 +35,6 @@ short readNum(string m) {
     return n;
 }
 
-bool checkifboxfull(char box)
-{
-    if (box == 'O' || box == 'X')
-        return false;
-    return true;
-}
-
 string readYN(string m)
 {
     string a;
